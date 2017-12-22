@@ -130,6 +130,8 @@
 		}
 	};
 
+
+
 	//内部实现继承的方法 不是很懂
 	var baseCreate = function(prototype) {
 		if(!_.isObject(prototype)) return {};
@@ -142,12 +144,15 @@
 	};
 
 	//闭包
-	var prototype = function(key) {
+	var shallowProperty = function(key) {
 		return function(obj) {
 			return obj == null ? void 0 : obj[key];
 		}
 	};
 
+	var deepGet = function(obj, path) {
+		
+	};
 	//js中能精确的最大数字
 	var MAX_ARRAY_INDEX = Math.pow(2, 53) - 1;
 

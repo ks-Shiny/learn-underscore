@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		 body{
+		 	width:100%;
+		 	height:100%;
+		 }
+		.outer-part{
+			width:530px;
+			height:530px;
+			margin:20px auto;
+			background: url('img/outer.png') no-repeat;
+			background-size:cover;
+			position:relative;
+		}
+		#outer{
+			display: block;
+			position: absolute;
+			width: 530px;
+			height: 530px;
+			transform: rotate(120deg);
+			/*transition: transform 10s ease;*/
+		}
+		#turntable,#pointer{
+			position: absolute;
+			display: block;
+		}
+		#turntable{
+			width:448px;
+			height:448px;
+			top:40px;
+			left:42px;
+			
+		}
+		#pointer{
+			width:174px;
+			height:228px;
+			left:178px;
+			top:124px;
+			
+		}
+
+		
+
+	</style>
+</head>
+<body>
+	<div class="outer-part">
+		<img src="img/outer.png" alt="outer" id="outer">
+		<img src="img/inner.png" alt="turntable" id="turntable">
+		<img src="img/pointer.png" alt="pointer" id="pointer">
+	</div>
+
+<script src="jquery/dist/jquery.js"></script>
+<script>
+	$(function () {
+		var i = 0;
+		setInterval(function(){
+			$('#outer').css({
+			    "webkitTransform":'rotate('+ i * 15 +'deg)',
+			    "MozTransform":'rotate('+ i * 15 +'deg)',
+			    "msTransform":'rotate('+ i * 15 +'deg)',
+			    "OTransform":'rotate('+ i * 15 +'deg)',
+			    "transform":'rotate('+ i * 15 +'deg)'
+			});
+			// $('#outer').style.transform  = ; 
+			i++;
+			
+			console.log(i * 60);
+		},1000)
+		
+	});	
+</script>	
+</body>
+</html>
